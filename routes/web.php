@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','TodosController@index');
-Route::get('/todo/edit','TodosController@edit')->name('Todo_edit');
-Route::post('/todo/edit','TodosController@edit')->name('Todo_update');
+Route::post('/todo/edit/{id}','TodosController@update');
 Route::post('/todo/delete/{id}','TodosController@delete');
 Route::post('/todo/create','TodosController@create');

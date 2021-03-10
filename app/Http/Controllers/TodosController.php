@@ -22,11 +22,6 @@ class TodosController extends Controller
         Todo::create(['content' => $request->task]);
         return redirect('/');
     }
-
-    public function edit(Request $request){
-        $todos = Todo::find($request->id);
-        return view('todos.edit',['todos' => $todos]);
-    }
     public function update(Request $request){
         $todos = Todo::find($request->id);
         $todos->content = $request->content;
